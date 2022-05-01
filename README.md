@@ -5,94 +5,93 @@ EmbedPagination
 Allows you to create a simple and fully customizable embed pagination with [discord.js](https://github.com/discordjs/discord.js/) v14.
 
 ### Functions
-```js
+Set the user who own this pagination, and the optional error message for others
+<br>If no errorMessage provided, everyone can use the pagination```js
 setUserId(userId: Snowflake, errorMessage?: string): this
 ```
-Set the user who own this pagination, and the optional error message for others
-<br>If no errorMessage provided, everyone can use the pagination
 
+Set the interaction or the message
 ```js
 .setInteraction(interaction): this
 or
 .setMessage(message): this
 ```
-Set the interaction or the message
 
+Set the longevity (default to 1_200_000)
 ```js
 .setTime(time: number): this
 ```
-Set the longevity (default to 1_200_000)
 
+Set the navigation buttons labels
 ```js
 .setLabels(label0: string, label1: string): this
 ```
-Set the navigation buttons labels
 
+Set additionnal rows to the message
 ```js
 .setRows(rows: ActionRowBuilder<ButtonBuilder | SelectMenuBuilder>[]): this
 ```
-Set additionnal rows to the message
 
+Add an embed
 ```js
 addEmbed(embed: EmbedBuilder | ((instance: this) => EmbedBuilder)): this
 ```
-Add an embed
 
+Set embeds
 ```js
 setEmbeds(embeds: (EmbedBuilder | ((instance: this) => EmbedBuilder))[]): this
 ```
-Set embeds
 
+Add a button
 ```js
 addButton(button: PaginationButton): this
 ```
-Add a button
 
+Set buttons
 ```js
 setButtons(buttons: PaginationButton[]): this
 ```
-Set buttons
 
+If true and if the pagination only contains 1 page, remove the navigation buttons
 ```js
 autoRemoveUpdateButtons(value: boolean): this
 ```
-If true and if the pagination only contains 1 page, remove the navigation buttons
 
+Disable the navigation buttons
 ```js
 disableUpdateButtons(state: boolean): this
 ```
-Disable the navigation buttons
 
+Disable all the message components at the end of the collector
 ```js
 disableAtEnd(state: boolean): this
 ```
-Disable all the message components at the end of the collector
 
+Set a callback executed at each page change
 ```js
 setUpdateCallback(callback: (instance: this, p: number) => void): this
 ```
-Set a callback executed at each page change
 
+Set a callback for your custom components
 ```js
 setSpecialCallback(callback: (instance: this, i: MessageComponentInteraction | SelectMenuInteraction) => void)
 : this
 ```
-Set a callback for your custom components
 
+Update the pagination
 ```js
 update(): void
 ```
-Update the pagination
 
+Start the pagination
 ```js
 start(page?: number): Promise<void>
 ```
-Start the pagination
 
+Change the current page of the pagination (can be use in the callbacks)
 ```js
 changePage(type: string, interaction: MessageComponentInteraction): void
 ```
-Change the current page of the pagination (can be use in the callbacks)
 
 ### Basic Example
 ```js

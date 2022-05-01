@@ -5,7 +5,7 @@ EmbedPagination
 Allows you to create a simple and fully customizable embed pagination with [discord.js](https://github.com/discordjs/discord.js/) v14.
 
 ### Functions
-> Set the user who own this pagination, and the optional error message for others
+Set the user who own this pagination, and the optional error message for others
 <br>If no errorMessage provided, everyone can use the pagination
 <br>`setUserId(userId: Snowflake, errorMessage?: string): this`
 

@@ -6,7 +6,8 @@ Allows you to create a simple and fully customizable embed pagination with [disc
 
 ### Functions
 Set the user who own this pagination, and the optional error message for others
-<br>If no errorMessage provided, everyone can use the pagination```js
+<br>If no errorMessage provided, everyone can use the pagination
+```js
 setUserId(userId: Snowflake, errorMessage?: string): this
 ```
 
@@ -74,8 +75,7 @@ setUpdateCallback(callback: (instance: this, p: number) => void): this
 
 Set a callback for your custom components
 ```js
-setSpecialCallback(callback: (instance: this, i: MessageComponentInteraction | SelectMenuInteraction) => void)
-: this
+setSpecialCallback(callback: (instance: this, i: MessageComponentInteraction | SelectMenuInteraction) => void): this
 ```
 
 Update the pagination

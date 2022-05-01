@@ -7,7 +7,9 @@ Allows you to create a simple and fully customizable embed pagination with [disc
 ### Functions
 Set the user who own this pagination, and the optional error message for others
 <br>If no errorMessage provided, everyone can use the pagination
-<br>`setUserId(userId: Snowflake, errorMessage?: string): this`
+<br>```js
+setUserId(userId: Snowflake, errorMessage?: string): this
+```
 
 > Set the interaction or the message
 <br>`.setInteraction(interaction): this` or `.setMessage(message)`

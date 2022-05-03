@@ -210,8 +210,8 @@ class EmbedPagination {
 
         for(const b of this.buttons)
             switch(b.position) {
-                case "LEFT": atLeft.push(b.button); break;
-                case "CENTER": atCenter.push(b.button); break;
+                case "Left": atLeft.push(b.button); break;
+                case "Center": atCenter.push(b.button); break;
                 default: atRight.push(b.button); break;
             };
 

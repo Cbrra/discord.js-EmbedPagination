@@ -1,0 +1,29 @@
+{
+  "name": "djs-embedpagination",
+  "version": "1.0.1",
+  "description": "Allows you to create a simple and fully customizable embed pagination with discord.js v14.",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Cbrra/discord.js-EmbedPagination.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Cbrra/discord.js-EmbedPagination/issues"
+  },
+  "homepage": "https://github.com/Cbrra/discord.js-EmbedPagination#readme",
+  "keywords": [
+    "discord.js",
+    "embedpagination",
+    "embed",
+    "pagination",
+    "button"
+  ],
+  "author": "Cbrra",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.0.0-dev.1651493371-4ba0f56"
+  }
+}

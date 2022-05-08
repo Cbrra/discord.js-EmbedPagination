@@ -1,10 +1,22 @@
-EmbedPagination
-===
+# EmbedPagination
 
-### About
+<p>
+    <a href="https://discord.gg/d8DTUfT"><img src="https://img.shields.io/discord/687287209300197566?color=5865F2&logo=discord&logoColor=white" alt="Discord server"/></a>
+    <a href="https://www.npmjs.com/package/djs-embedpagination"><img src="https://img.shields.io/npm/v/djs-embedpagination.svg?maxAge=3600" alt="npm version"/></a>
+</p>
+
+## About
 Allows you to create a simple and fully customizable embed pagination with [discord.js](https://github.com/discordjs/discord.js/) v14.
 
-### Functions
+## Help
+Need help ? Join my [Discord server](https://discord.gg/d8DTUfT) and send me a private message ! (Cobra//#5239 ; 619838036846575617)
+
+## Docs
+Create the pagination instance with your discord's client's user's id
+```js
+new EmbedPagination(clientId: string)
+```
+
 Set the user who own this pagination, and the optional error message for others
 <br>If no errorMessage provided, everyone can use the pagination
 ```js
@@ -93,31 +105,35 @@ Change the current page of the pagination (can be use in the callbacks)
 changePage(type: string, interaction: MessageComponentInteraction): void
 ```
 
-### Basic Example
+## Basic Example (Slash Command)
 ```js
 const { EmbedBuilder, ButtonBuilder, ButtonStyle } = require("discord.js");
+const { EmbedPagination } = require("djs-embedpagination");
 
 const embed = new EmbedBuilder()
     .setColor("#2a90fe")
     .setTitle("First embed")
-    .setDescription("Hello world !");
+    .setDescription("If you see this, the embedpagination works !");
 
 const embed2 = new EmbedBuilder()
     .setColor("#2a90fe")
     .setTitle("Second embed")
-    .setDescription("Hello world 2 !");
+    .setDescription("Hello world !");
 
-const pagination = new EmbedPagination(client.user.id)
+new EmbedPagination(client.user.id)
     .setUserId(interaction.user.id, "You can't interact with this message !")
     .setInteraction(interaction)
+    .setLabels("Previous Page", "Next Page")
     .setEmbeds([embed, embed2])
     .addButton({
         position: "Right",
         button: new ButtonBuilder()
             .setCustomId("custom-button")
-            .setLabel("Right button")
+            .setLabel("Custom button")
             .setStyle(ButtonStyle.Secondary)
     })
     .setSpecialCallback((instance, i) => i.reply("Clicked !"))
     .start();
 ```
+Result:
+<br><img src="./example.png">
